@@ -1,0 +1,14 @@
+#docker compose up
+
+#version: '3.9'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: dreamweaver42
+      POSTGRES_DB: dreamweaver
+    ports:
+      - 5432:5432
+    volumes: 
+      - ./data:/var/lib/postgresql/data
