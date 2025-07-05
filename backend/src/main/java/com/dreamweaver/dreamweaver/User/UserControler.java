@@ -36,27 +36,27 @@ public class UserControler {
         this.deleteUserService = deleteUserService;
     }
 
-    @PostMapping("/product")
+    @PostMapping("/user")
     public ResponseEntity<UserDTO> createUser(@RequestBody User user){
         return createUserService.execute(user);
     }
 
-    @GetMapping("/products")
+    @GetMapping("/users")
     public ResponseEntity<List<UserDTO>> getUsers(){
         return getUsersService.execute(null);
     } 
 
-    @GetMapping("/product/{id}")
+    @GetMapping("/user/{id}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Long id){
         return getUserService.execute(id);
     }
 
-    @PutMapping("/product/{id}")
+    @PutMapping("/user/{id}")
     public ResponseEntity<UserDTO> updateUser(@PathVariable Long id, @RequestBody User user){
         return updateUserService.execute(new UpdateUserCommand(id, user));
     }
 
-    @DeleteMapping("/product/{id}")
+    @DeleteMapping("/user/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id){
         return deleteUserService.execute(id);
     }
